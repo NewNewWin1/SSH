@@ -1,43 +1,29 @@
 #!/bin/bash
 
 plain='\033[0m'
-
-#စာလုံးအရောင်များ(Server Message)
-red='\e[31m'    #အနီရောင်
-yellow='\e[33m' #အဝါရောင်
-gray='\e[90m'   #မီးခိုးရောင်
-green='\e[92m'  #အစိမ်းရောင်
-blue='\e[94m'   #အပြာရောင်
-magenta='\e[95m'#ပန်းခရမ်းရောင်
-cyan='\e[96m'   #စိမ်းပြာရောင်
-none='\e[0m'    #အရောင်မရှိ
-
-#Username နှင့် Password ပြောင်းရန်
-username="iam404"
-password="iam404"
-
-#SSH USER LIMIT သတ်မှတ်ရန်
-sshlimiter="300"
-
-#ရက်ကန့်သက်ရန်(Qwiklab အတွက်မို့ 2-DAY ပုံသေထားရပါသည်)
+red='\e[31m'    
+yellow='\e[33m' 
+gray='\e[90m'   
+green='\e[92m'  
+blue='\e[94m'   
+magenta='\e[95m'
+cyan='\e[96m'   
+none='\e[0m'    
+username="ypp26"
+password="yyp26"
+sshlimiter="1500"
 dias="2"
 
-#💠 Server Message ပြင်ရန်💠
-#Server-message အရွယ်အစား သတ်မှတ်ချက်
-# h6 သည် = စာလုံးအသေး ဖြစ်သည်
-# h4 သည် = စာလုံးအလတ် ဖြစ်သည်
-# h3 သည် = စာလုံးအကြီး  ဖြစ်သည်
+
 servermessage="<h3><font color='red'>
-▬▬▬▬▬▬▬▬✿4▪0▪4✿▬▬▬▬▬▬▬▬
+◈─────⪧ 🥰💯 Y . Y . P ⪦─────◈"
 </font></h3>
 <h4><font color='cyan'>
 ↤↤↤↤↤ GCP SERVER BY ④ ⍤⃝✿④ ↦↦↦↦↦
 </font></h4>
 <h3><font color='red'>
-▬▬▬▬▬▬▬▬✿4▪0▪4✿▬▬▬▬▬▬▬▬
-</font></h3>"
-#End
-#ဒီအောက်က စာတွေပြင်ရန်မလိုပါ🌺
+◈─────⪧ SSH ACCOUNT ⪦─────◈"
+
 [[ $EUID -ne 0 ]] && echo -e "${red}Error: ${plain} You must use root user to run this script!\n" && exit 1
 
 sed -i 's/#\?AllowTcpForwarding .*/AllowTcpForwarding yes/' /etc/ssh/sshd_config && sed -i 's/#\?PasswordAuthentication .*/PasswordAuthentication yes/' /etc/ssh/sshd_config && sed -i 's/#\?Banner .*/Banner \/etc\/ssh\/gcp_404/' /etc/ssh/sshd_config && /etc/init.d/ssh restart;
@@ -51,20 +37,20 @@ echo "$username:$password" | chpasswd
 echo "$username $sshlimiter" >>/root/usuarios.db
 IP=$(wget -qO- ipv4.icanhazip.com)
 echo ""
-echo -e "\033[1;32m===================================="
-echo -e "\033[1;32m   🌺ㅤONLY/:FORYOU&ALLㅤ🌺  " 
-echo -e "\033[1;32m===================================="
+echo -e "\033[1;32m◈─────⪧ --------◈--------- ⪦─────◈"
+echo -e "\033[1;32m   ❤️ㅤS S H  S c r i p tㅤ✅  " 
+echo -e "\033[1;32m◈─────⪧ --------◈--------- ⪦─────◈"
 echo ""
 echo -e "\033[1;37m◈─────⪧ SSH ACCOUNT ⪦─────◈"
 echo ""
-echo -e "\033[1;32m◈ Host / IP   :⪧  \033[1;31m$IP"
-echo -e "\033[1;32m◈ Port        :⪧  \033[1;31m22"
-echo -e "\033[1;32m◈ Username    :⪧  \033[1;31m$username"
-echo -e "\033[1;32m◈ Password    :⪧  \033[1;31m$password"
-echo -e "\033[1;32m◈ Login Limit :⪧  \033[1;31m$sshlimiter"
-echo -e "\033[1;32m◈ Expire Date :⪧  \033[1;31m$gui"
+echo -e "\033[1;32m◈ Host / IP❤️   :⪧  \033[1;31m$IP"
+echo -e "\033[1;32m◈ Port✅        :⪧  \033[1;31m22"
+echo -e "\033[1;32m◈ Username🔓    :⪧  \033[1;31m$username"
+echo -e "\033[1;32m◈ Password🗝️    :⪧  \033[1;31m$password"
+echo -e "\033[1;32m◈ Login Limit🫥 :⪧  \033[1;31m$sshlimiter"
+echo -e "\033[1;32m◈ Expire Date💯 :⪧  \033[1;31m$gui"
 echo ""
-echo -e "\033[1;37m◈────⪧ ✿ ✿ 4▪0▪4 ✿ ✿ ⪦────◈"
+echo -e "\033[1;37m◈────⪧🔐 Y . Y . P 🔐⪦────◈"
 echo ""
 echo "------------------------------------"
 printf "Developed the script by \n"
@@ -72,14 +58,8 @@ echo "------------------------------------"
 echo ""
 
 echo -e "${yellow}▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ${plain}"
-echo -e "${cyan} ___   ___          ________          ___   ___                               ${plain}"
-echo -e "${cyan}|\  \ |\  \        |\   __  \        |\  \ |\  \                              ${plain}"
-echo -e "${cyan}\ \  \|_\  \       \ \  \|\  \       \ \  \|_\  \                             ${plain}"
-echo -e "${cyan} \ \______  \       \ \  \/\  \       \ \______  \                            ${plain}"
-echo -e "${cyan}  \|_____|\  \       \ \  \/\  \       \|_____|\  \                           ${plain}"
-echo -e "${cyan}         \ \__\       \ \_______\             \ \__\                          ${plain}"
-echo -e "${cyan}          \|__|        \|_______|              \|__|                          ${plain}"
-echo -e "${green}Contact the developer https://t.me/nkka404 for more information              ${plain}"
+echo -e "${red} Free Channel      ${plain}"
+echo -e "${green} S  S  H  A c c o u n t             ${plain}"
 echo -e "${yellow}▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ${plain}"
 
-echo -e "${cyan}i am 404 😎 ${plain}"
+echo -e "${cyan} Y . Y . P 🔐😎 ${plain}"
